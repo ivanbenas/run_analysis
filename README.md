@@ -2,10 +2,11 @@ Getting and Cleaning Data - Course Project
 ============
 
 # Third Week 
-The dataSet needed to execute run_analisys.R represents data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained: 
-http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
-The goal of this project is to have a new data set with athe observables grouped by the average value of each variable to each activity and subject.
+The goal of this project is to have a new data set with the observables grouped by the average value of each variable to each activity and subject.
+
+The dataSet needed to execute run_analisys.R represents data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained: 
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones,
 
 The steps you have to perform in order to test this project are:
 
