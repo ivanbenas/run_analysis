@@ -22,12 +22,11 @@ trainSetSub <-read.table("./train/subject_train.txt")
 totalSetY <- rbind(testSetY,trainSetY)
 colnames(totalSetY) <-"activity_id"
 
-totalSetY <- rbind(testSetY,trainSetY)
 totalSetSubjects <- rbind( testSetSub, trainSetSub)
-colnames(totalSetSubjects) <-"Subject_id"
+colnames(totalSetSubjects) <-"subject_id"
 # 1-Merges the training and the test sets to create one data set.
 
-
+totalSetX<-rbind(testSetX,trainSetX)
 # 2-Extracts only the measurements on the mean and standard deviation for each measurement.
 
 # Grep the info to have only data of the mean and the std
@@ -37,7 +36,7 @@ meanAndStdSetX<-totalSetX[,meanAndStdFeatures$V1]
 meanAndStdSet<-cbind(totalSetSubjects,totalSetY,meanAndStdSetX)
 
 #3-Uses descriptive activity names to name the activities in the data set
-meanAndStdSetActiv<-merge (activities,meanAndStdSet, by.x="V1", by.y="Activity_id", by.all=TRUE)
+meanAndStdSetActiv<-merge (activities,meanAndStdSet, by.x="V1", by.y="activity_id", by.all=TRUE)
 
 # 4-Appropriately labels the data set with descriptive variable names.
 colnames(meanAndStdSetActiv) <-c("activity_id","activity_name","subject_id",as.character(meanAndStdFeatures$V2))
