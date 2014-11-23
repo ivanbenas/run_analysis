@@ -4,7 +4,7 @@ run_analysis Guide
 Guide with the main run_analysis script functions.
 line break
 
-###Variables:
+###Variables reading initial files:
 1. `activities` data.frame of activity_labels.txt
 2. `features` data.frame of features.txt
 3. `testSetX` data.frame of  X_test.txt
@@ -24,8 +24,12 @@ as `testSetY` and `trainSetY`  contain the same type of data we cat the Y observ
 totalSetY <- rbind(testSetY,trainSetY)
 colnames(totalSetY) <-"activity_id"
 ```
-We the same for the subjects to obtain;
+We do the same for the set of subjects to obtain;
 `totalSetSubjects` as data.frame
+
+We change the column names of the activities to have activity_id and activity_name
+
+At this point, we create a data frame with train and test set X
 
 Next command greps only the mean and standar data columns;
 ```R
@@ -47,18 +51,23 @@ To add readable labels to the data set the colnames function is called.
 ```R
 colnames(meanAndStdSetActiv) <-c("activity_id","activity_name","subject_id",as.character(meanAndStdFeatures$V2))
 ```
+As the activity_id is no longer needed, is removed from the dataSet
 ___
 So far, so good. Now the funny commands start... 
-The last part of the script creates a list object `dataSplit` with the split data by activity_id and subject_id
+The last part of the script creates a new data.frame object `dataMelted` with the data formated by activity_name and subject_id
 ```R
-dataSplit <-split (meanAndStdSetActiv, list(meanAndStdSetActiv$activity_id,meanAndStdSetActiv$subject_id ))
+dataMelted <- melt(meanAndStdSetActiv, id=c("activity_name","subject_id"))
 ```
-To obtain a dataframe with the average values of each column a lapply function is called. The first 3 columns of each
-data frame have not to be applied in the function.
+To obtain a dataframe with the average values of each variable a dcast function is called. The subject_id and `activity_name` and `subject_id` again.
 ```R
-finalData<-lapply(dataSplit, function(x) colMeans(x[,4:ncol(meanAndStdSetActiv)]))
+castedData <-dcast(dataMelted, subject_id + activity_name ~ variable, mean)
 ```
-And, to end the script, the `finalData` dataframe is writen to a text file;
+The `castedData` is not a tidy data set, since we have each variable in a column as the `meanAndStdSetActiv` previous data frame.
+Then we only need to melt it again and obtain the `tidyData` set.
+```R
+tidyData <- melt(castedData, id=c("subject_id","activity_name"))
+```
+And, to end the script, the `tidyData` dataframe is writen to a text file;
 ___
 **tidyDataSet.txt** is the final file obtained as the output of run_analysis script.
 

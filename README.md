@@ -14,3 +14,6 @@ The steps you have to perform in order to test this project are:
 2. Unzip the dataSet in your working directory.
 3. Execute run_analysis.R in the folder 'UCI HAR Dataset/'.
 4. If you are success, then you have a new file "tidyDataSet.txt" with the  average of each variable for each activity and each subject.
+5. To know how the script works and the structure of tidy data read the CodeBook File
+
+**Enjoy !!!**
