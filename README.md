@@ -1,7 +1,7 @@
 Getting and Cleaning Data - Course Project
 ============
 
-# Third Week 
+## Third Week 
 
 The goal of this project is to have a new data set with the observables grouped by the average value of each variable to each activity and subject.
 
