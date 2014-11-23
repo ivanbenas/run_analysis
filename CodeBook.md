@@ -74,12 +74,11 @@ This plain text file contains a tiny data set with four columns:
 
 1. `subject_id` With the 30 ids of the people that carried out the smart phones
 2. `activity_name` With one of the six activities that they where performing while the observation 
-⋅⋅1. LAYING
-⋅⋅2. SITTING
-⋅⋅3. STANDING
-⋅⋅4. WALKING
-⋅⋅5. WALKING_DOWNSTAIRS
-⋅⋅6. WALKING_UPSTAIRS
+  1. LAYING
+  2. SITTING
+  3. STANDING
+  4. WALKING
+  5. WALKING_DOWNSTAIRS
+  6. WALKING_UPSTAIRS
 3. `variable` The different meassures related to mean or standard deviation
 4. `value` is the mean value of the variable observed for each subject and activity
-
