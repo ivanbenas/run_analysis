@@ -53,6 +53,6 @@ dataMelted <- melt(meanAndStdSetActiv, id=c("activity_name","subject_id"))
 #The mean of variable 
 castedData <-dcast(dataMelted, subject_id + activity_name ~ variable, mean)
 #Then, we melt the new data set to have a nice tidy data with only four columns
-tidyData <- melt(castedData, id=c("activity_name","subject_id"))
+tidyData <- melt(castedData, id=c("subject_id","activity_name"))
 #Then, the dataSet
 write.table(tidyData,"tidyDataSet.txt", row.names=FALSE)
