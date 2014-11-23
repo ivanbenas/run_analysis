@@ -5,14 +5,14 @@ Guide with the main run_analysis script functions.
 line break
 
 ###Variables:
-1. `activities` dataframe of activity_labels.txt
-2. `features` dataframe of features.txt"
-3. `testSetX` dataframe of  X_test.txt"
-4. `testSetY` dataframe of y_test.txt"
-5. `testSetSub` dataframe of subject_test.txt"
-6. `trainSetX` dataframe of X_train.txt"
-7. `trainSetY`dataframe of y_train.txt"
-8. `trainSetSub` dataframe of subject_train.txt"
+1. `activities` data.frame of activity_labels.txt
+2. `features` data.frame of features.txt
+3. `testSetX` data.frame of  X_test.txt
+4. `testSetY` data.frame of y_test.txt
+5. `testSetSub` data.frame of subject_test.txt
+6. `trainSetX` data.frame of X_train.txt
+7. `trainSetY`data.frame of y_train.txt
+8. `trainSetSub` data.frame of subject_train.txt
 
 ___
 
@@ -25,7 +25,7 @@ totalSetY <- rbind(testSetY,trainSetY)
 colnames(totalSetY) <-"activity_id"
 ```
 We the same for the subjects to obtain;
-`totalSetSubjects` as dataframe
+`totalSetSubjects` as data.frame
 
 Next command greps only the mean and standar data columns;
 ```R
@@ -36,11 +36,11 @@ The subset desired is obtained by selecting only the columns that match `meanAnd
 meanAndStdSetX <- totalSetX[,meanAndStdFeatures$V1]
 ```
 The next step towards the full dataset is to add the  `totalSetSubjects` and the `totalSetY` colums with the `cbind` function;
-meanAndStdSet
+`meanAndStdSet`
 
 Then we merge the activities with this set by `activity_id` and the full dataset is ready.
 
-meanAndStdSetActiv is the dataframe with this information.
+`meanAndStdSetActiv` is the data.frame with this information.
 
 To add readable labels to the data set the colnames function is called.
 

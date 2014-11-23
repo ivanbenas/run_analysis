@@ -11,6 +11,6 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 The steps you have to perform in order to test this project are:
 
 1. Download the zip file with all needed data from: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
-2. Unzip the dataSet in your working directory
-3. Execute run_analysis.R in the same folder as the unziped data.
+2. Unzip the dataSet in your working directory.
+3. Execute run_analysis.R in the folder 'UCI HAR Dataset/'.
 4. If you are success, then you have a new file "tidyDataSet.txt" with the  average of each variable for each activity and each subject.
