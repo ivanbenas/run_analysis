@@ -70,4 +70,15 @@ tidyData <- melt(castedData, id=c("subject_id","activity_name"))
 And, to end the script, the `tidyData` dataframe is writen to a text file;
 ___
 **tidyDataSet.txt** is the final file obtained as the output of run_analysis script.
+This plain text file contains a tiny data set with four columns:
+1. `subject_id` With the 30 id's of the people that carried out the smart phones
+2. `activity_name` With one of the six activities that they where performing while the observation 
+..* LAYING
+..* SITTING
+..* STANDING
+..* WALKING
+..* WALKING_DOWNSTAIRS
+..* WALKING_UPSTAIRS
+3. `variable` The different meassures related to mean or standard deviation
+4. `value` is the mean value of the variable observed for each subject and activity
 
